@@ -5,7 +5,6 @@ import { initDB } from "./db";
 const main = async () => {
   try {
     await initDB();
-    console.log("Database Initialized");
     app.listen(config.port, () => {
       console.log(`Server is running on port ${config.port}`);
     });
