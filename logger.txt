@@ -1,0 +1,10 @@
+Method -> GET | Time -> 1779029891952 | url -> /
+Method -> GET | Time -> 1779029915952 | url -> /profile
+Method -> GET | Time -> 1779031283049 | url -> /api/users
+Method -> POST | Time -> 1779034446199 | url -> /api/auth/login
+Method -> GET | Time -> 1779034462567 | url -> /api/users
+Method -> GET | Time -> 1779035379025 | url -> /
+Method -> GET | Time -> 1779035382821 | url -> /users
+Method -> GET | Time -> 1779035391357 | url -> /api/users
+Method -> GET | Time -> 1779035395438 | url -> /api/users
+Method -> GET | Time -> 1779035410130 | url -> /api/users
