@@ -8,7 +8,7 @@ const createProfileintoDB = async (payload:any) => {
     SELECT * FROM users WHERE id=$1
     `,[user_id])
 
-    if(user.rows.length === 0){
+    if(user.rows.length === 0){ 
         throw new Error("user not exist")
     }
     console.log("user" , user.rows)

@@ -3,6 +3,6 @@ export type User = {
   full_name: string;
   age: number;
   email: string;
-  password: unknown;
+  password: string;
   is_active?: boolean;
 };
