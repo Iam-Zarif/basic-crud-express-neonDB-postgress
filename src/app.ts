@@ -31,12 +31,10 @@ app.get("/", (req: Request, res: Response) => {
   });
 });
 
-
-app.use(GlobalErrorHandler);
-
-
 app.use("/api/users", useRouter);
 app.use("/api/profile", profileRouter)
 app.use("/api/auth", authRouter);
+
+app.use(GlobalErrorHandler);
 
 export default app;
