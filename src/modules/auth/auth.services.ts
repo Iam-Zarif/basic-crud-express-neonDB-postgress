@@ -28,15 +28,39 @@ const loginUserIntoDB = async (payload: Login) => {
 
   const jwtPayload = {
     id: user.id,
+    role: user.role,
     email: user.email,
     name: user.name,
   };
 
   const accessToken = jwt.sign(jwtPayload, config.secret as string, {expiresIn:"1d"});
+   const refreshToken = jwt.sign(jwtPayload, config.refresh_secret as string, {
+     expiresIn: "7d",
+   });
   delete user.password
-  return {user,accessToken}
+  return {user,accessToken,refreshToken}
 };
+
+const verifyRefreshToken = (token: string) => {
+  return jwt.verify(token, config.refresh_secret as string);
+};
+
+const generateAccessToken = (payload: object) => {
+  return jwt.sign(payload, config.secret as string, {
+    expiresIn: "1d",
+  });
+};
+
+const generateRefreshToken = (payload: object) => {
+  return jwt.sign(payload, config.refresh_secret as string, {
+    expiresIn: "7d",
+  });
+};
+
 
 export const authServices = {
   loginUserIntoDB,
+  generateRefreshToken,
+  verifyRefreshToken,
+  generateAccessToken,
 };
